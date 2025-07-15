@@ -31,7 +31,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Destroy
-        run: terraform destroy -auto-approve
+        run: terraform destroy -lock=false -auto-approve  #terraform destroy -auto-approve
           
       - name: Apply Terraform changes
         run: terraform apply -auto-approve tfplan
