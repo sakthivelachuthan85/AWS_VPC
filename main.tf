@@ -123,7 +123,7 @@ resource "aws_instance" "web_server" {
   ami           = "ami-020cba7c55df1f615" # Example AMI, replace with a valid one
   instance_type = var.my_instance_type
   subnet_id     = aws_subnet.pub_subnet_1.id
-  security_groups = [aws_security_group.sec_group1.name]
+  security_groups = [aws_security_group.sec_group1.id]
 
   tags = {
     Name        = "${var.client_name}-web-server"
@@ -137,7 +137,7 @@ resource "aws_instance" "db_server" {
   ami           = "ami-020cba7c55df1f615" # Example AMI, replace with a valid one
   instance_type = var.my_instance_type
   subnet_id     = aws_subnet.pri_subnet_1.id
-  security_groups = [aws_security_group.sec_group1.name]
+  security_groups = [aws_security_group.sec_group1.id]
 
   tags = {
     Name        = "${var.client_name}-db-server"
