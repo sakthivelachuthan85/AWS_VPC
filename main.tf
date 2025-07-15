@@ -120,7 +120,7 @@ resource "aws_security_group" "sec_group1" {
 
 #10.create ec2 web
 resource "aws_instance" "web_server" {
-  ami           = "ami-0c55b159cbfafe1f0" # Example AMI, replace with a valid one
+  ami           = "ami-020cba7c55df1f615" # Example AMI, replace with a valid one
   instance_type = var.my_instance_type
   subnet_id     = aws_subnet.pub_subnet_1.id
   security_groups = [aws_security_group.sec_group1.name]
@@ -134,7 +134,7 @@ resource "aws_instance" "web_server" {
 
 #11.create ec2 -DB
 resource "aws_instance" "db_server" {
-  ami           = "ami-0c55b159cbfafe1f0" # Example AMI, replace with a valid one
+  ami           = "ami-020cba7c55df1f615" # Example AMI, replace with a valid one
   instance_type = var.my_instance_type
   subnet_id     = aws_subnet.pri_subnet_1.id
   security_groups = [aws_security_group.sec_group1.name]
